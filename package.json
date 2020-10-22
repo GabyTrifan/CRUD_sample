@@ -4,6 +4,7 @@
   "description": "A basci CRUD API for accesing notes",
   "main": "index.js",
   "scripts": {
+    "start": "npx nodemon",
     "test": "node index.js"
   },
   "keywords": [],
