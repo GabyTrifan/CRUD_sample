@@ -1,0 +1,23 @@
+{
+  "name": "crud_sample",
+  "version": "1.1.1",
+  "description": "A basci CRUD API for accesing notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [],
+  "author": "Trifan Grigore-Gabriel",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^4.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "joi": "^17.2.1",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
