@@ -9,13 +9,15 @@ const app = express();
 const morgan = require('morgan');
 const helmet = require('helmet');
 
+
+app.use(express.json()); // use JSON Middleware
+app.use(helmet());
+
 // Routes Modules
 const notes = require('./routes/notes');
 const home = require('./routes/home');
 
 
-app.use(express.json()); // use JSON Middleware
-app.use(helmet());
  
 // Routes
 app.use('/api/notes', notes);
