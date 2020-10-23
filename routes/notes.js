@@ -50,8 +50,16 @@ function validateNote(Obj) {
 	return schema.validate(Obj);
 }
 
-router.get('/:name', (req, res) => {
+router.get('/:name',async (req, res) => {
 	//get specific note
+	const note = await NModel
+		.find({name: req.params.name})
+		.limit(1)
+		.select("-_id");
+		if(note)
+			res.json(note);
+		else
+			res.status(404).json({err:"Nothing found"});
 }); 
 
 module.exports = router;
