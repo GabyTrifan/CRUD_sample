@@ -8,11 +8,12 @@ mongoose
                 })
     .then(() => console.log("Connected to Database..."))
     .catch(err => console.error(`Can't connect`));
-
+mongoose.set('useCreateIndex', true);
 const DbSchema = new mongoose.Schema({
     	name: { 
 		type: String, 
 		required: true,
+		unique: true,
 		minlength: 3,
 		maxlength: 255, 
 	},

@@ -32,13 +32,35 @@ router.post('/', async (req, res) => {
 		res.status(400).json({err:ex.message});
 	}
 });
-router.delete('/:name', (req, res) => {
+router.delete('/:name',async (req, res) => {
 	// Delete Note
-
+	const note = await NModel.find({name: req.params.name});
+	if (Object.keys(note).length === 0) {res.status(400).json({err:"Note not found"});return;}
+	await NModel.deleteOne({name: req.params.name});
+	res.json({status:"Note Deleted Successfully"});
 });
-router.put('/:name', (req, res) => {
+router.put('/:name',async (req, res) => {
+	// Update Note, you'll need both name and content
 
-	// Update Note
+	const { error } = validateNote(req.body); // result.error
+	if(error) {
+		// 400 Bad request
+		res.status(400).json({err:error.details[0].message});
+		return; 
+	}
+	try {
+		const note = await NModel.updateOne({name: req.params.name}, {
+			$set: {
+				name: req.body.name,
+				content: req.body.content
+			}
+		});
+	
+		res.json({status: "Note updated successfully"});
+	}
+	catch (ex) {
+		res.json({err: ex.message});
+	}
 });
 
 function validateNote(Obj) {
@@ -59,7 +81,7 @@ router.get('/:name',async (req, res) => {
 		if(note)
 			res.json(note);
 		else
-			res.status(404).json({err:"Nothing found"});
+			res.status(404).json({err:"Note not found"});
 }); 
 
 module.exports = router;
