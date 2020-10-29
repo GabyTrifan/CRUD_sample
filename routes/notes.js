@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 	if(error) {
 		// 400 Bad request
 		res.status(400).json({err:error.details[0].message});
-		return; 
+		return;
 	}
 	const note = new NModel({
 		content: req.body.content,
