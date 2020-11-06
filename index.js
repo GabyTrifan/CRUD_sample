@@ -20,7 +20,7 @@ const home = require('./routes/home');
 
  
 // Routes
-app.use('/api/notes', notes);
+app.use('/notes', notes);
 app.use('/', home);
 
 if (app.get('env') === 'development') {

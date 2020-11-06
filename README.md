@@ -13,10 +13,10 @@ To start the server you must have ***Nodejs*** installed (greater than 11) along
 #### Database Connection
 This Project supports MongoDB databases,the Database connection URI must be declared in the `DATABASE` environment variable
 #### API Routes
-> `/api/notes`    __which has__ the following requests:
+> `/notes`    __which has__ the following requests:
 * **POST**, where you can upload a Note
 * **GET**, to get all the notes made
-> `/api/notes/<name>`, where `<name>` is the note's name
+> `/notes/<name>`, where `<name>` is the note's name
 > This note has the following **requests**:
 * **GET** Request to get a specific note
 * **PUT** Request where you can update the note's content/name
