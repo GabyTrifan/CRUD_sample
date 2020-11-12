@@ -1,7 +1,7 @@
 {
   "name": "crud_sample",
   "version": "1.1.1",
-  "description": "A basci CRUD API for accesing notes",
+  "description": "A basic CRUD API for accesing notes",
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon",
