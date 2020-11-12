@@ -8,7 +8,7 @@
     "test": "node index.js"
   },
   "keywords": [],
-  "author": "Trifan Grigore-Gabriel",
+  "author": "TheSlayer666",
   "license": "MIT",
   "dependencies": {
     "debug": "^4.2.0",
