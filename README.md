@@ -1,5 +1,5 @@
-[![](https://tokei.rs/b1/github.com/TheSlayer-666/CRUD_Sample)](https://github.com/TheSlayer-666/CRUD_Sample)
-# About this project
+
+# About this project [![](https://tokei.rs/b1/github.com/TheSlayer-666/CRUD_Sample)](https://github.com/TheSlayer-666/CRUD_Sample)
 Consists in a sample REST API provinding a CRUD functionality (Create Remove Update Delete) with simple notes, which are simple JSON objects with a name and content property.
 To start the server you must have ***Nodejs*** installed (greater than 11) along with NPM
 
